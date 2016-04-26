@@ -1,0 +1,30 @@
+<?php
+/**
+ * Warehouse related module
+ *
+ * @category    YanMalinovsky
+ * @package     YanMalinovsky_Warehouse
+ * @copyright   Copyright (c) 2016 Yan Malinovsky
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+?>
+
+<?php $collection = $this->getAllCollection(); ?>
+
+<?php if ($collection->getData()): ?>
+    <?php foreach ($collection as $warehouse): ?>
+        <?php if ($warehouse->getQty()): ?>
+            <p>
+                <?php echo "{$warehouse->getProductName()} | " ?>
+                <?php echo "{$warehouse->getQty()} | " ?>
+                <?php echo $warehouse->getWarehouse() ?>
+            </p>
+        <?php endif; ?>
+    <?php endforeach; ?>
+<?php endif; ?>
+<hr />
+
+<form action="<?php echo $this->getUrl('warehouse/index/upload') ?>" method="post" enctype="multipart/form-data">
+    <input id="filename" name="filename" type="file" accept=".csv"/>
+    <button type="submit" class="button" title="<?php echo $this->__('Submit'); ?>"><?php echo $this->__('Submit'); ?></button>
+</form>

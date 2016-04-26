@@ -1,0 +1,16 @@
+/**
+* Warehouse related module
+*
+* @category    YanMalinovsky
+* @package     YanMalinovsky_Warehouse
+* @copyright   Copyright (c) 2016 Yan Malinovsky
+* @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+*/
+
+### Module Files Outside this Directory
+
+# Module XML File
+app/etc/modules/YanMalinovsky_Warehouse.xml
+
+# Frontend Template Files
+app/design/frontend/base/default/template/yanmalinovsky_warehouse/warehouse.phtml

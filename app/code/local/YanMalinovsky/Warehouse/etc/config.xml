@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!--
+/**
+* Warehouse related module
+*
+* @category    YanMalinovsky
+* @package     YanMalinovsky_Warehouse
+* @copyright   Copyright (c) 2016 Yan Malinovsky
+* @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+*/
+-->
+<config>
+    <modules>
+        <YanMalinovsky_Warehouse>
+            <version>0.1.0</version>
+        </YanMalinovsky_Warehouse>
+    </modules>
+    <global>
+        <blocks>
+            <yanmalinovsky_warehouse>
+                <class>YanMalinovsky_Warehouse_Block</class>
+            </yanmalinovsky_warehouse>
+        </blocks>
+        <models>
+            <yanmalinovsky_warehouse>
+                <class>YanMalinovsky_Warehouse_Model</class>
+                <resourceModel>yanmalinovsky_warehouse_resource</resourceModel>
+            </yanmalinovsky_warehouse>
+            <yanmalinovsky_warehouse_resource>
+                <class>YanMalinovsky_Warehouse_Model_Resource</class>
+                <deprecatedNode>yanmalinovsky_warehouse_mysql4</deprecatedNode>
+                <entities>
+                    <warehouse>
+                        <table>yanmalinovsky_warehouse</table>
+                    </warehouse>
+                    <products>
+                        <table>yanmalinovsky_warehouse_products</table>
+                    </products>
+                </entities>
+            </yanmalinovsky_warehouse_resource>
+        </models>
+        <resources>
+            <yanmalinovsky_warehouse_setup>
+                <setup>
+                    <module>YanMalinovsky_Warehouse</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </yanmalinovsky_warehouse_setup>
+            <yanmalinovsky_warehouse_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </yanmalinovsky_warehouse_write>
+            <yanmalinovsky_warehouse_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </yanmalinovsky_warehouse_read>
+        </resources>
+    </global>
+    <frontend>
+        <routers>
+            <yanmalinovsky_warehouse>
+                <use>standard</use>
+                <args>
+                    <module>YanMalinovsky_Warehouse</module>
+                    <frontName>warehouse</frontName>
+                </args>
+            </yanmalinovsky_warehouse>
+        </routers>
+    </frontend>
+</config>
